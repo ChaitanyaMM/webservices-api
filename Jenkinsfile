@@ -1,7 +1,6 @@
 node {
 
-
-    withMaven(maven:'maven') {
+    agent any{
 
         stage('Checkout') {
             git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
