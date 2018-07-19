@@ -1,21 +1,57 @@
-node {
 
-    agent any{
-
-        stage('Checkout') {
+pipeline {
+    agent { docker 'maven:3-alpine' } 
+    stages {
+	
+		stage('Checkout') {
             git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
+           
+		   }
+		   
+        stage('Example Build') {
+            steps {
+                sh 'mvn -B clean verify'
+				 echo 'Hello World'
+
+            }
         }
+		
+		stage('dev') {
+		    steps {
+                sh 'mvn -B clean verify'
+				echo 'Hello World'
 
-        stage('Build') {
-            sh 'mvn clean install'
+            }
+		
+		}
+		
+		stage('QA') {
+		    steps {
+                sh 'mvn -B clean verify'
+			    echo 'Hello World'
 
-            def pom = readMavenPom file:'pom.xml'
-            print pom.version
-            env.version = pom.version
-        }
+            }
+		
+		}
+		
+		stage('pre-prod') {
+		    steps {
+                sh 'mvn -B clean verify'
+				echo 'Hello World'
 
-        }
+            }
+		
+		}
+				
+		stage('prod') {
+		    steps {
+                sh 'mvn -B clean verify'
+				echo 'Hello World'
 
-    
-
+            }
+		
+		}
+		
+		
+    }
 }
