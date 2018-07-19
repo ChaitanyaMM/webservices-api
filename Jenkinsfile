@@ -1,6 +1,6 @@
 pipeline {
 
-   agent any {
+   agent  {
       stages{
         stage('Checkout') {
             git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
