@@ -1,13 +1,15 @@
 pipeline {
     agent any
-    stage('Checkout') {
-            git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
-        }
+    stages{
     stage('Example') {
         steps {
             echo 'Hello'
         }
     }
+    stage('Checkout') {
+            git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
+        }
+   
 }
-
+}
 
