@@ -1,4 +1,5 @@
-FROM openjdk:8-jre-alpine
-MAINTAINER chaitanya <chaitanya@eyedentifysystems.com>
-ENTRYPOINT ["/usr/bin/java"]
-EXPOSE 3333
+FROM 		tomcat:8.0.21-jre8
+
+MAINTAINER 	Amjad Afanah (amjad@dchq.io)
+
+COPY 		./software/ /usr/local/tomcat/webapps/
