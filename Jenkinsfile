@@ -19,7 +19,6 @@ node {
             echo 'build on place'
             
         }
-        
           stage('production') {
             echo 'build on place'
             
