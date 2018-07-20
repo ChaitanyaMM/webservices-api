@@ -4,6 +4,14 @@ node {
             git url: 'https://github.com/ChaitanyaMM/webservices-api.git', credentialsId: 'github-ChaitanyaMM', branch: 'master'
             echo 'Cloning GitHub'
         }
+        
+        stage('Build-1') {
+            sh 'mvn clean install'
+
+            def pom = readMavenPom file:'pom.xml'
+            print pom.version
+            env.version = pom.version
+        }
 
         stage('Build') {
             echo 'building webservices-api'
