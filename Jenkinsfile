@@ -6,7 +6,7 @@ node {
         }
         
         stage('Build-1') {
-            bat 'mvn clean package -DskipTests'
+            echo 'mvn clean package -DskipTests'
            
         }
 
