@@ -9,6 +9,11 @@ node {
             echo 'building webservices-api'
           
         }
+        
+         stage('Dev') {
+            echo 'development Environment'
+            
+        }
       
           stage('QA') {
             echo 'deployemnt failure'
