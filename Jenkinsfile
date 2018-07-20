@@ -1,6 +1,6 @@
 node {
 
-    withMaven(maven:'maven') {
+    
 
         stage('Checkout') {
             git url: 'https://github.com/ChaitanyaMM/webservices-api.git', credentialsId: 'github-ChaitanyaMM', branch: 'master'
@@ -16,6 +16,6 @@ node {
 
          
 
-    }
+    
 
 }
