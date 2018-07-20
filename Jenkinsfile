@@ -10,12 +10,17 @@ node {
           
         }
       
-          stage('pre-prod') {
+          stage('QA') {
             echo 'deployemnt failure'
             
         }
     
-         stage('prod') {
+         stage('pre-prod') {
+            echo 'build on place'
+            
+        }
+        
+          stage('production') {
             echo 'build on place'
             
         }
