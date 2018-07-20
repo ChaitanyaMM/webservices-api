@@ -1,14 +1,22 @@
-pipeline {
-    agent any
-   stage('Checkout') {
-            git url: 'https://github.com/ChaitanyaMM/webservices-api.git'
+node {
+
+    withMaven(maven:'maven') {
+
+        stage('Checkout') {
+            git url: 'https://github.com/ChaitanyaMM/webservices-api.git', credentialsId: 'github-ChaitanyaMM', branch: 'master'
         }
-     stage('Example') {
-        steps {
-            echo 'Hello'
+
+        stage('Build') {
+            sh 'mvn clean install'
+
+            def pom = readMavenPom file:'pom.xml'
+            print pom.version
+            env.version = pom.version
         }
+
+         
+
     }
-   
-}
+
 
 
