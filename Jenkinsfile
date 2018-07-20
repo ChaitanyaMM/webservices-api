@@ -6,7 +6,7 @@ node {
         }
 
         stage('Build') {
-            echo 'building'
+            echo 'building webservices-api'
           
         }
       
